@@ -7,6 +7,7 @@ import {
   Layers,
   Eye,
 } from "lucide-react";
+import { Link } from "wouter";
 import { Layout } from "@/components/Layout";
 import { fadeUp } from "@/lib/animations";
 import { Button } from "@/components/ui/button";
@@ -17,9 +18,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+const WA_NUMBER = "258834751328";
+
 const featuredService = {
   title: "Combo Signature",
-  price: "R$ 85",
+  price: "750 MT",
   duration: "75 min",
   description:
     "A experiência Urban Cut completa. Corte preciso + Barba artesanal + Alinhamento de fios. Para quem não aceita meio-termo — do fade à navalha, cada etapa executada com máxima técnica.",
@@ -28,7 +31,7 @@ const featuredService = {
     "Barba modelada com toalha quente",
     "Alinhamento de fios com navalha",
     "Finalização com óleo premium",
-    "Cerveja artesanal cortesia",
+    "Bebida de cortesia",
   ],
 };
 
@@ -37,23 +40,23 @@ const allServices = [
     icon: Scissors,
     title: "Corte Urban",
     duration: "45 min",
-    price: "R$ 55",
+    price: "500 MT",
     description:
-      "Corte preciso com acabamento que define seu estilo — fade, undercut, texturizado. Cada detalhe executado com navalha e técnica de precisão.",
+      "Corte preciso com acabamento que define o teu estilo — fade, undercut, texturizado. Cada detalhe executado com navalha e técnica de precisão.",
   },
   {
     icon: Droplets,
     title: "Barba de Respeito",
     duration: "30 min",
-    price: "R$ 40",
+    price: "350 MT",
     description:
-      "Terapia completa com toalha quente, modelagem artesanal e finalização com óleos premium. Sua barba como obra de arte.",
+      "Terapia completa com toalha quente, modelagem artesanal e finalização com óleos premium. A tua barba como obra de arte.",
   },
   {
     icon: Layers,
     title: "Combo Signature",
     duration: "75 min",
-    price: "R$ 85",
+    price: "750 MT",
     description:
       "Corte + Barba + Alinhamento de fios. A experiência Urban Cut completa. Para quem não aceita meio-termo.",
   },
@@ -61,7 +64,7 @@ const allServices = [
     icon: Zap,
     title: "Pigmentação de Barba",
     duration: "40 min",
-    price: "R$ 60",
+    price: "500 MT",
     description:
       "Cobertura de fios brancos com técnica avançada e pigmentos de alta fixação. Resultado natural, duração prolongada.",
   },
@@ -69,7 +72,7 @@ const allServices = [
     icon: Droplets,
     title: "Hidratação Capilar",
     duration: "30 min",
-    price: "R$ 50",
+    price: "400 MT",
     description:
       "Tratamento com ativo premium para cabelos ressecados e sem vida. Restaura o brilho e a maciez com uma única sessão.",
   },
@@ -77,7 +80,7 @@ const allServices = [
     icon: Eye,
     title: "Sobrancelha no Fio",
     duration: "15 min",
-    price: "R$ 25",
+    price: "200 MT",
     description:
       "Design e alinhamento com fio de seda. Complemento perfeito para qualquer serviço — detalhes que fazem toda a diferença.",
   },
@@ -87,12 +90,12 @@ const steps = [
   {
     number: "01",
     title: "Agendamento",
-    desc: "Reserve pelo WhatsApp ou pessoalmente. Confirme seu horário e o serviço desejado.",
+    desc: "Reserva pelo WhatsApp ou pelo site. Confirma o teu horário e o serviço desejado.",
   },
   {
     number: "02",
     title: "Consultoria de Visagismo",
-    desc: "Nosso barbeiro analisa sua estrutura facial e estilo de vida antes de qualquer corte.",
+    desc: "O nosso barbeiro analisa a tua estrutura facial e estilo de vida antes de qualquer corte.",
   },
   {
     number: "03",
@@ -104,19 +107,19 @@ const steps = [
 const faqs = [
   {
     q: "Preciso agendar com antecedência?",
-    a: "Recomendamos agendar com pelo menos 24h de antecedência, especialmente para fins de semana. Mas aceitamos encaixes quando há disponibilidade — consulte pelo WhatsApp.",
+    a: "Recomendamos agendar com pelo menos 24h de antecedência, especialmente para fins de semana. Mas aceitamos encaixes quando há disponibilidade — consulta pelo WhatsApp.",
   },
   {
     q: "Qual a duração do Combo Signature?",
     a: "Em média 75 minutos, mas pode variar conforme o estilo desejado e o estado inicial do cabelo e barba. Reservamos tempo suficiente para não apressar nenhuma etapa.",
   },
   {
-    q: "Vocês trabalham com visagismo?",
+    q: "Trabalham com visagismo?",
     a: "Sim. Todos os nossos profissionais são treinados em visagismo — a técnica de recomendar cortes e estilos que harmonizam com a estrutura facial de cada cliente.",
   },
   {
     q: "Aceitam walk-in (sem agendamento)?",
-    a: "Aceitamos quando há disponibilidade na agenda, mas agendamentos têm prioridade. Para garantir seu horário, agende pelo WhatsApp.",
+    a: "Aceitamos quando há disponibilidade na agenda, mas agendamentos têm prioridade. Para garantir o teu horário, agenda pelo WhatsApp ou pelo site.",
   },
 ];
 
@@ -134,7 +137,7 @@ export function Servicos() {
             transition={{ duration: 0.6 }}
             className="font-condensed text-primary tracking-[0.3em] text-xs uppercase"
           >
-            Urban Cut · São Paulo
+            Urban Cut · Maputo
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
@@ -192,16 +195,11 @@ export function Servicos() {
                   </li>
                 ))}
               </ul>
-              <a
-                href="https://wa.me/5511999999999"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="button-agendar-featured"
-              >
+              <Link href="/agendamento" data-testid="button-agendar-featured">
                 <Button className="rounded-none bg-primary text-black font-condensed font-bold tracking-widest px-10 h-14 text-lg hover:scale-105 transition-transform duration-300">
                   AGENDAR COMBO SIGNATURE
                 </Button>
-              </a>
+              </Link>
             </div>
             <div className="order-1 md:order-2 relative">
               <div className="aspect-[4/5] bg-card border border-white/10 overflow-hidden">
@@ -271,16 +269,11 @@ export function Servicos() {
                   <p className="text-gray-400 text-sm leading-relaxed mb-7 flex-grow">
                     {service.description}
                   </p>
-                  <a
-                    href="https://wa.me/5511999999999"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-testid={`button-agendar-full-${index}`}
-                  >
+                  <Link href="/agendamento" data-testid={`button-agendar-full-${index}`}>
                     <Button className="w-full rounded-none bg-transparent border border-white/20 text-white hover:bg-primary hover:text-black hover:border-primary font-condensed tracking-widest transition-colors duration-300">
                       AGENDAR
                     </Button>
-                  </a>
+                  </Link>
                 </motion.div>
               );
             })}

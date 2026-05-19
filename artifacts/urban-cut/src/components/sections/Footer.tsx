@@ -2,12 +2,15 @@ import { Link } from "wouter";
 import { MapPin, Clock, Phone, Mail } from "lucide-react";
 import { SiInstagram, SiTiktok, SiWhatsapp } from "react-icons/si";
 
+const WA_NUMBER = "258834751328";
+
 const pages = [
   { name: "Início", href: "/" },
   { name: "Serviços", href: "/servicos" },
   { name: "Galeria", href: "/galeria" },
   { name: "Sobre", href: "/sobre" },
   { name: "Contato", href: "/contato" },
+  { name: "Agendar", href: "/agendamento" },
 ];
 
 export function Footer() {
@@ -23,7 +26,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-gray-400 text-sm mt-4 mb-6 leading-relaxed">
-              Craft. Culture. Cut. Um refúgio urbano para quem exige precisão, estilo e cultura street.
+              Craft. Culture. Cut. A barbearia premium de Maputo para quem exige precisão, estilo e cultura urbana.
             </p>
             <div className="flex space-x-3">
               <a
@@ -41,7 +44,7 @@ export function Footer() {
                 <SiTiktok size={18} />
               </a>
               <a
-                href="https://wa.me/5511999999999"
+                href={`https://wa.me/${WA_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="link-whatsapp"
@@ -80,21 +83,21 @@ export function Footer() {
                 <Clock className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                 <div>
                   <p className="text-white font-medium">Seg – Sex</p>
-                  <p>10h às 21h</p>
+                  <p>09h às 19h</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                 <div>
                   <p className="text-white font-medium">Sábado</p>
-                  <p>09h às 21h</p>
+                  <p>08h às 18h</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                 <div>
                   <p className="text-white font-medium">Domingo</p>
-                  <p>11h às 18h</p>
+                  <p>10h às 15h</p>
                 </div>
               </li>
             </ul>
@@ -109,29 +112,29 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                 <a
-                  href="https://maps.google.com/?q=Rua+Augusta,+1500,+São+Paulo"
+                  href="https://maps.google.com/?q=Av+Julius+Nyerere,+Maputo"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                   data-testid="link-maps-footer"
                 >
-                  Rua Augusta, 1500<br />Consolação, São Paulo
+                  Av. Julius Nyerere, 500<br />Polana, Maputo
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
-                <span>(11) 9 9999-9999</span>
+                <span>+258 83 475 1328</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
-                <span>contato@urbancut.com.br</span>
+                <span>geral@urbancut.co.mz</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-3">
-          <p>© {new Date().getFullYear()} Urban Cut. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Urban Cut Maputo. Todos os direitos reservados.</p>
           <p className="font-condensed tracking-widest text-gray-600">CRAFT · CULTURE · CUT</p>
         </div>
       </div>

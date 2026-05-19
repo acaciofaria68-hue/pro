@@ -23,7 +23,7 @@ export function Hero() {
           transition={{ duration: 0.6 }}
           className="font-condensed text-primary tracking-[0.3em] text-sm mb-6 uppercase"
         >
-          Barbearia Premium · Consolação · São Paulo
+          Barbearia Premium · Polana · Maputo
         </motion.span>
 
         <motion.h1
@@ -42,8 +42,8 @@ export function Hero() {
           className="text-base md:text-lg text-gray-300 max-w-2xl mb-10 leading-relaxed"
           style={{ fontFamily: "'DM Sans', sans-serif" }}
         >
-          Mais que barba e cabelo. Um refúgio urbano para quem exige precisão,
-          estilo e cultura street no centro da cidade.
+          Mais que barba e cabelo. Um refúgio urbano em Maputo para quem exige
+          precisão, estilo e cultura street no coração da cidade.
         </motion.p>
 
         <motion.div
@@ -52,17 +52,11 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
         >
-          <a
-            href="https://wa.me/5511999999999"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto"
-            data-testid="button-reserve-hero"
-          >
+          <Link href="/agendamento" className="w-full sm:w-auto" data-testid="button-reserve-hero">
             <Button className="w-full sm:w-auto h-14 px-10 bg-primary text-black font-condensed font-bold text-lg tracking-widest rounded-none animate-pulse-glow hover:scale-105 transition-transform duration-300">
               RESERVE SUA CADEIRA
             </Button>
-          </a>
+          </Link>
 
           <Link href="/servicos" className="w-full sm:w-auto" data-testid="link-servicos-hero">
             <Button

@@ -63,16 +63,11 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <a
-            href="https://wa.me/5511999999999"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-testid="button-agendar-desktop"
-          >
+          <Link href="/agendamento" data-testid="button-agendar-desktop">
             <Button className="bg-primary hover:bg-primary/90 text-black font-condensed font-bold tracking-wider hover:scale-105 transition-transform duration-200 rounded-none px-6">
               AGENDAR HORÁRIO
             </Button>
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -103,17 +98,11 @@ export function Navbar() {
               </Link>
             );
           })}
-          <a
-            href="https://wa.me/5511999999999"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full"
-            data-testid="button-agendar-mobile"
-          >
+          <Link href="/agendamento" className="w-full" data-testid="button-agendar-mobile">
             <Button className="w-full bg-primary text-black font-condensed font-bold tracking-wider h-12 text-lg rounded-none">
               AGENDAR HORÁRIO
             </Button>
-          </a>
+          </Link>
         </div>
       )}
     </nav>

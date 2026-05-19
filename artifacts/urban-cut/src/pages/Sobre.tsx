@@ -15,36 +15,36 @@ const values = [
   {
     icon: Headphones,
     title: "Cultura",
-    desc: "Somos uma extensão da cena urbana. Música, arte e identidade em cada corte. O ambiente é parte do serviço.",
+    desc: "Somos uma extensão da cena urbana moçambicana. Música, arte e identidade em cada corte. O ambiente é parte do serviço.",
   },
   {
     icon: Star,
     title: "Experiência",
-    desc: "Mais que um serviço, um ritual. Do agendamento à finalização, cada etapa foi pensada para você sair melhor do que entrou.",
+    desc: "Mais que um serviço, um ritual. Do agendamento à finalização, cada etapa foi pensada para saíres melhor do que entraste.",
   },
 ];
 
 const team = [
   {
-    name: "Marcus Silva",
+    name: "Mário Macuácua",
     title: "Head Barber",
     specialty: "Fade & Visagismo",
     img: team1,
-    bio: "8 anos de experiência. Referência em fade degradê e consultoria de imagem masculina.",
+    bio: "8 anos de experiência. Referência em fade degradê e consultoria de imagem masculina em Maputo.",
   },
   {
-    name: "André Costa",
+    name: "Jonas Sitoe",
     title: "Senior Barber",
     specialty: "Barba Artesanal & Pigmentação",
     img: team2,
-    bio: "Especialista em barba e pigmentação. Transforma fios brancos em estilo com técnica avançada.",
+    bio: "Especialista em barba e pigmentação. Transforma cada fio em estilo com técnica e dedicação.",
   },
   {
-    name: "Felipe Lima",
+    name: "Celso Nhambiu",
     title: "Barber",
     specialty: "Cortes Texturizados & Undercut",
     img: team1,
-    bio: "A visão mais jovem da equipe. Especialista em cortes texturizados modernos e undercuts.",
+    bio: "A visão mais jovem da equipa. Especialista em cortes texturizados modernos e designs criativos.",
   },
 ];
 
@@ -54,7 +54,6 @@ const stats = [
   { value: "4.9", label: "Estrelas no Google" },
   { value: "3", label: "Barbeiros Especialistas" },
 ];
-
 
 export function Sobre() {
   return (
@@ -85,8 +84,8 @@ export function Sobre() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-gray-400 max-w-xl mt-6 leading-relaxed"
           >
-            Uma barbearia fundada na cultura, aperfeiçoada na técnica — e
-            obcecada com cada detalhe da sua experiência.
+            Uma barbearia fundada na cultura moçambicana, aperfeiçoada na técnica — e
+            obcecada com cada detalhe da tua experiência.
           </motion.p>
         </div>
       </section>
@@ -130,10 +129,10 @@ export function Sobre() {
               </h2>
               <div className="space-y-5 text-gray-400 leading-relaxed">
                 <p>
-                  A Urban Cut nasceu em 2016 da visão de três barbeiros
+                  A Urban Cut nasceu em 2016 da visão de três barbeiros moçambicanos
                   apaixonados por cultura urbana e técnica de precisão. O que
-                  começou como um pequeno espaço na Rua Augusta se tornou
-                  referência em São Paulo para quem busca mais do que um simples
+                  começou como um pequeno espaço na Polana tornou-se
+                  referência em Maputo para quem busca mais do que um simples
                   corte — uma experiência completa.
                 </p>
                 <p>
@@ -143,9 +142,9 @@ export function Sobre() {
                   mas em visagismo, cultura e atendimento personalizado.
                 </p>
                 <p>
-                  Nossa missão é simples: fazer você sair da cadeira se
-                  sentindo a melhor versão de si mesmo. Sem apressar, sem
-                  desleixar — do primeiro corte ao combo completo.
+                  A nossa missão é simples: fazer você sair da cadeira se
+                  sentindo a melhor versão de si mesmo. Orgulhosamente feito
+                  em Moçambique, para o homem moçambicano.
                 </p>
               </div>
 
@@ -227,7 +226,7 @@ export function Sobre() {
               QUEM FAZ ACONTECER
             </span>
             <h2 className="font-display text-5xl md:text-6xl text-white mt-1">
-              NOSSA EQUIPE
+              NOSSA EQUIPA
             </h2>
           </motion.div>
 

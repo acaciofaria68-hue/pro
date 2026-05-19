@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import bentoBg from "@/assets/bento-barbershop.png";
 import { fadeUp } from "@/lib/animations";
 
+const WA_NUMBER = "258834751328";
+
 const stats = [
   { value: "8+", label: "Anos de Experiência" },
   { value: "2.4K+", label: "Clientes Atendidos" },
@@ -18,21 +20,21 @@ const services = [
   {
     title: "Corte Urban",
     duration: "45 min",
-    price: "R$ 55",
+    price: "500 MT",
     description:
-      "Corte preciso com acabamento que define seu estilo — fade, undercut, texturizado. Cada detalhe executado com navalha e técnica.",
+      "Corte preciso com acabamento que define o teu estilo — fade, undercut, texturizado. Cada detalhe executado com navalha e técnica.",
   },
   {
     title: "Barba de Respeito",
     duration: "30 min",
-    price: "R$ 40",
+    price: "350 MT",
     description:
-      "Terapia completa com toalha quente, modelagem artesanal e finalização com óleos premium. Sua barba como obra de arte.",
+      "Terapia completa com toalha quente, modelagem artesanal e finalização com óleos premium. A tua barba como obra de arte.",
   },
   {
     title: "Combo Signature",
     duration: "75 min",
-    price: "R$ 85",
+    price: "750 MT",
     description:
       "Corte + Barba + Alinhamento de fios. A experiência Urban Cut completa. Para quem não aceita meio-termo.",
   },
@@ -120,17 +122,11 @@ export function Home() {
                 <p className="text-gray-400 text-sm leading-relaxed flex-grow mb-7">
                   {service.description}
                 </p>
-                <a
-                  href="https://wa.me/5511999999999"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-auto"
-                  data-testid={`button-agendar-service-${index}`}
-                >
+                <Link href="/agendamento" className="mt-auto" data-testid={`button-agendar-service-${index}`}>
                   <Button className="w-full rounded-none bg-transparent border border-white/20 text-white hover:bg-primary hover:text-black hover:border-primary font-condensed tracking-widest transition-colors duration-300">
                     AGENDAR
                   </Button>
-                </a>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -162,7 +158,7 @@ export function Home() {
               </h2>
               <p className="text-gray-300 max-w-md mb-8 leading-relaxed text-sm">
                 Cada detalhe foi pensado para transformar o momento do corte em uma experiência
-                completa. Cerveja artesanal, playlist curada e profissionais que entendem da sua identidade.
+                completa. Música curada, ambiente premium e profissionais que entendem a tua identidade.
               </p>
               <Link href="/galeria" data-testid="link-espaco-teaser">
                 <Button className="rounded-none bg-primary text-black font-condensed font-bold tracking-widest px-8 hover:scale-105 transition-transform duration-300 w-fit">
@@ -195,24 +191,24 @@ export function Home() {
             </h2>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="https://wa.me/5511999999999"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid="button-agendar-cta"
-            >
+            <Link href="/agendamento" data-testid="button-agendar-cta">
               <Button className="rounded-none bg-primary text-black font-condensed font-bold tracking-widest text-lg px-10 h-14 hover:scale-105 transition-transform duration-300 animate-pulse-glow">
                 AGENDAR AGORA
               </Button>
-            </a>
-            <Link href="/contato" data-testid="link-contato-cta">
+            </Link>
+            <a
+              href={`https://wa.me/${WA_NUMBER}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="link-whatsapp-cta"
+            >
               <Button
                 variant="outline"
                 className="rounded-none border-white/30 text-white font-condensed tracking-widest text-lg px-10 h-14 hover:border-primary hover:text-primary transition-colors"
               >
-                FALE CONOSCO
+                FALAR NO WHATSAPP
               </Button>
-            </Link>
+            </a>
           </div>
         </motion.div>
       </section>
