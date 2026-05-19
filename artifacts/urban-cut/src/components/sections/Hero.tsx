@@ -1,68 +1,88 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.png";
 
 export function Hero() {
   return (
-    <section id="inicio" className="relative h-screen min-h-[600px] w-full flex items-center justify-center overflow-hidden pt-20">
-      {/* Background Image & Overlay */}
-      <div 
+    <section
+      id="inicio"
+      className="relative h-screen min-h-[600px] w-full flex items-center justify-center overflow-hidden"
+    >
+      <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
-      <div className="absolute inset-0 z-10 bg-black/70" />
+      <div className="absolute inset-0 z-10 bg-black/72" />
 
-      {/* Content */}
-      <div className="container relative z-20 mx-auto px-4 md:px-6 flex flex-col items-center text-center">
-        <motion.h1 
+      <div className="container relative z-20 mx-auto px-4 md:px-8 flex flex-col items-center text-center pt-20">
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="font-condensed text-primary tracking-[0.3em] text-sm mb-6 uppercase"
+        >
+          Barbearia Premium · Consolação · São Paulo
+        </motion.span>
+
+        <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-extrabold text-white leading-tight max-w-5xl mb-6"
+          transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+          className="font-display text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] text-white leading-none max-w-6xl mb-6"
         >
           O CORTE QUE CONFIGURA SUA IDENTIDADE VISUAL.
         </motion.h1>
 
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-lg md:text-xl text-gray-300 max-w-2xl mb-10"
+          transition={{ duration: 0.8, delay: 0.25, ease: "easeOut" }}
+          className="text-base md:text-lg text-gray-300 max-w-2xl mb-10 leading-relaxed"
+          style={{ fontFamily: "'DM Sans', sans-serif" }}
         >
-          Mais que barba e cabelo. Um refúgio urbano para quem exige precisão, estilo e cultura street no centro da cidade.
+          Mais que barba e cabelo. Um refúgio urbano para quem exige precisão,
+          estilo e cultura street no centro da cidade.
         </motion.p>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
         >
-          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-            <Button className="w-full sm:w-auto h-14 px-8 bg-primary hover:bg-primary/90 text-black font-bold text-lg rounded-none animate-pulse-glow hover:scale-105 transition-transform duration-300">
+          <a
+            href="https://wa.me/5511999999999"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto"
+            data-testid="button-reserve-hero"
+          >
+            <Button className="w-full sm:w-auto h-14 px-10 bg-primary text-black font-condensed font-bold text-lg tracking-widest rounded-none animate-pulse-glow hover:scale-105 transition-transform duration-300">
               RESERVE SUA CADEIRA
             </Button>
           </a>
-          
-          <a href="#servicos" className="w-full sm:w-auto">
-            <Button variant="outline" className="w-full sm:w-auto h-14 px-8 border-white text-white hover:bg-white hover:text-black font-semibold text-lg rounded-none transition-colors duration-300">
-              Conhecer Serviços
+
+          <Link href="/servicos" className="w-full sm:w-auto" data-testid="link-servicos-hero">
+            <Button
+              variant="outline"
+              className="w-full sm:w-auto h-14 px-10 border-white/60 text-white hover:bg-white hover:text-black font-condensed font-bold text-lg tracking-widest rounded-none transition-colors duration-300"
+            >
+              VER SERVIÇOS
             </Button>
-          </a>
+          </Link>
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center animate-bounce"
+        transition={{ delay: 1.2, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center animate-bounce"
       >
-        <span className="text-xs text-gray-400 uppercase tracking-widest mb-2 font-medium">Scroll</span>
-        <ChevronDown className="text-primary w-6 h-6" />
+        <span className="font-condensed text-xs text-gray-500 tracking-[0.3em] mb-2">SCROLL</span>
+        <ChevronDown className="text-primary w-5 h-5" />
       </motion.div>
     </section>
   );

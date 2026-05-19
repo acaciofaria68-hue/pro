@@ -1,76 +1,138 @@
-import React from "react";
-import { MapPin, Clock } from "lucide-react";
-import { SiInstagram, SiTiktok } from "react-icons/si";
-import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
+import { MapPin, Clock, Phone, Mail } from "lucide-react";
+import { SiInstagram, SiTiktok, SiWhatsapp } from "react-icons/si";
+
+const pages = [
+  { name: "Início", href: "/" },
+  { name: "Serviços", href: "/servicos" },
+  { name: "Galeria", href: "/galeria" },
+  { name: "Sobre", href: "/sobre" },
+  { name: "Contato", href: "/contato" },
+];
 
 export function Footer() {
   return (
-    <footer className="bg-black py-16 border-t border-white/10">
-      <div className="container mx-auto px-4 md:px-6">
+    <footer className="bg-black border-t border-white/10 pt-16 pb-8">
+      <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
-          <div className="col-span-1 md:col-span-2">
-            <h2 className="font-serif text-3xl font-extrabold text-white tracking-tighter mb-4">
-              URBAN<span className="text-primary ml-1">CUT</span>
-            </h2>
-            <p className="text-gray-400 max-w-sm mb-6">
-              Craft. Culture. Cut. Mais que barba e cabelo. Um refúgio urbano para quem exige precisão, estilo e cultura street no centro da cidade.
+          <div className="md:col-span-1">
+            <Link href="/" data-testid="link-footer-logo">
+              <span className="font-display text-3xl text-white tracking-wide cursor-pointer">
+                URBAN<span className="text-primary">CUT</span>
+              </span>
+            </Link>
+            <p className="text-gray-400 text-sm mt-4 mb-6 leading-relaxed">
+              Craft. Culture. Cut. Um refúgio urbano para quem exige precisão, estilo e cultura street.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:text-black transition-all duration-300">
-                <SiInstagram size={20} />
+            <div className="flex space-x-3">
+              <a
+                href="#"
+                data-testid="link-instagram"
+                className="w-10 h-10 flex items-center justify-center bg-white/5 text-white hover:bg-primary hover:text-black transition-all duration-300"
+              >
+                <SiInstagram size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:text-black transition-all duration-300">
-                <SiTiktok size={20} />
+              <a
+                href="#"
+                data-testid="link-tiktok"
+                className="w-10 h-10 flex items-center justify-center bg-white/5 text-white hover:bg-primary hover:text-black transition-all duration-300"
+              >
+                <SiTiktok size={18} />
+              </a>
+              <a
+                href="https://wa.me/5511999999999"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="link-whatsapp"
+                className="w-10 h-10 flex items-center justify-center bg-white/5 text-white hover:bg-primary hover:text-black transition-all duration-300"
+              >
+                <SiWhatsapp size={18} />
               </a>
             </div>
           </div>
 
-          {/* Info */}
+          {/* Navigation */}
           <div>
-            <h3 className="text-white font-bold mb-4 font-serif uppercase tracking-wider">Contato & Horários</h3>
-            <ul className="space-y-4 text-sm text-gray-400">
-              <li className="flex items-start">
-                <Clock className="w-5 h-5 mr-3 text-primary shrink-0" />
+            <h4 className="font-condensed text-white font-bold tracking-widest text-sm uppercase mb-5">
+              Navegação
+            </h4>
+            <ul className="space-y-3">
+              {pages.map((page) => (
+                <li key={page.href}>
+                  <Link href={page.href} data-testid={`link-footer-${page.name.toLowerCase()}`}>
+                    <span className="text-gray-400 hover:text-primary transition-colors text-sm cursor-pointer">
+                      {page.name}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Hours */}
+          <div>
+            <h4 className="font-condensed text-white font-bold tracking-widest text-sm uppercase mb-5">
+              Horários
+            </h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li className="flex items-start gap-3">
+                <Clock className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-white font-medium mb-1">Seg a Sáb:</p>
+                  <p className="text-white font-medium">Seg – Sex</p>
                   <p>10h às 21h</p>
-                  <p className="text-white font-medium mt-2 mb-1">Dom:</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <Clock className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <div>
+                  <p className="text-white font-medium">Sábado</p>
+                  <p>09h às 21h</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <Clock className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <div>
+                  <p className="text-white font-medium">Domingo</p>
                   <p>11h às 18h</p>
                 </div>
               </li>
             </ul>
           </div>
 
-          {/* Location */}
+          {/* Contact */}
           <div>
-            <h3 className="text-white font-bold mb-4 font-serif uppercase tracking-wider">Localização</h3>
-            <ul className="space-y-4 text-sm text-gray-400">
-              <li className="flex items-start">
-                <MapPin className="w-5 h-5 mr-3 text-primary shrink-0" />
-                <div>
-                  <p>Rua Augusta, 1500</p>
-                  <p>Consolação</p>
-                  <p>São Paulo, SP</p>
-                </div>
+            <h4 className="font-condensed text-white font-bold tracking-widest text-sm uppercase mb-5">
+              Contato
+            </h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <a
+                  href="https://maps.google.com/?q=Rua+Augusta,+1500,+São+Paulo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                  data-testid="link-maps-footer"
+                >
+                  Rua Augusta, 1500<br />Consolação, São Paulo
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-primary shrink-0" />
+                <span>(11) 9 9999-9999</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-primary shrink-0" />
+                <span>contato@urbancut.com.br</span>
               </li>
             </ul>
-            <div className="mt-6">
-              <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">
-                <Button className="w-full bg-transparent border border-primary text-primary hover:bg-primary hover:text-black transition-colors">
-                  FALE CONOSCO
-                </Button>
-              </a>
-            </div>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Urban Cut. Todos os direitos reservados.</p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors">Privacidade</a>
-            <a href="#" className="hover:text-white transition-colors">Termos</a>
-          </div>
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-3">
+          <p>© {new Date().getFullYear()} Urban Cut. Todos os direitos reservados.</p>
+          <p className="font-condensed tracking-widest text-gray-600">CRAFT · CULTURE · CUT</p>
         </div>
       </div>
     </footer>
