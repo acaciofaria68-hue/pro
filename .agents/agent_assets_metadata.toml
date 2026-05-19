@@ -1,0 +1,14 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "Yad1BGC9bQ6WLj-8UmIXd"
+uri = "file://artifacts/urban-cut/src/assets/hero-bg.png"
+type = "image"
+title = "dark barbershop interior hero"
+
+[[generated]]
+id = "oELQN9p5zO74mesO0X0dA"
+uri = "file://artifacts/urban-cut/src/assets/bento-barbershop.png"
+type = "image"
+title = "atmospheric barbershop bento block"
