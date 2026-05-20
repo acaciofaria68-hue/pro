@@ -1,5 +1,5 @@
 {
   "version": 2,
-  "installCommand": "npm install",
+  "installCommand": "npx pnpm install",
   "buildCommand": "npx pnpm run vercel-build"
 }
