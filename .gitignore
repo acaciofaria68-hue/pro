@@ -47,3 +47,11 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Local environment and editor files
+.env.local
+.npmrc
+.replit
+.replitignore
+.agents/
+pnpm-install-help.txt
