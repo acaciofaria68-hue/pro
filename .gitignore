@@ -55,3 +55,4 @@ Thumbs.db
 .replitignore
 .agents/
 pnpm-install-help.txt
+package-lock.json
