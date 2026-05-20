@@ -1,5 +1,5 @@
 {
   "version": 2,
-  "installCommand": "pnpm install",
-  "buildCommand": "pnpm run build"
+  "installCommand": "npm exec --package pnpm -- pnpm install",
+  "buildCommand": "npm exec --package pnpm -- pnpm run vercel-build"
 }
