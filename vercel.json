@@ -1,5 +1,5 @@
 {
   "version": 2,
-  "installCommand": "npm exec --package pnpm -- pnpm install --frozen-lockfile --include=dev",
+  "installCommand": "npm exec --package pnpm -- pnpm install --dev",
   "buildCommand": "npm exec --package pnpm -- pnpm run vercel-build"
 }
